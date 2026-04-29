@@ -14,7 +14,7 @@ body {
 
 /* --- Navegación --- */
 .navbar {
-    background: #2c3e50;
+    background: black;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -128,7 +128,7 @@ body {
     font-weight: bold;
 }
 
-/* --- RESPONSIVE (Móviles) --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 600px) {
     .navbar {
         flex-direction: column;
@@ -145,4 +145,15 @@ body {
     .container {
         margin: 1rem;
     }
+    
+    .logo-img {
+        height: 35px; /* Un poco más pequeño para que quepa todo el menú */
+    }
+}
+
+.logo-img {
+    height: 50px; 
+    width: auto; 
+    object-fit: contain; 
+    vertical-align: middle;
 }

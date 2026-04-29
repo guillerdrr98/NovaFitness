@@ -1,0 +1,148 @@
+/* --- Estilos Generales --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* --- Navegación --- */
+.navbar {
+    background: #2c3e50;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* --- Contenedores --- */
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* --- Galería de Imágenes --- */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas en escritorio */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+/* --- Visor Modal (Imagen grande) --- */
+#visor-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+#img-modal-contenido {
+    max-width: 90%;
+    max-height: 80%;
+    border: 3px solid white;
+}
+
+#cerrar-modal {
+    position: absolute;
+    top: 20px; right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* Ventana Modal de Descripción */
+.modal-info {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2000; /* Por encima de todo */
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido-descripcion {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 350px;
+    position: relative;
+    text-align: center;
+    border-top: 5px solid #2c3e50;
+    animation: aparecer 0.3s ease; /* Pequeña animación de entrada */
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#cerrar-descripcion {
+    position: absolute;
+    top: 10px; right: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* --- RESPONSIVE (Móviles) --- */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        margin-top: 10px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+    }
+
+    .container {
+        margin: 1rem;
+    }
+}

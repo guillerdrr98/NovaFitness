@@ -128,29 +128,6 @@ body {
     font-weight: bold;
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-    }
-    
-    .nav-links {
-        margin-top: 10px;
-    }
-
-    .galeria {
-        grid-template-columns: 1fr; /* Una sola columna en móvil */
-    }
-
-    .container {
-        margin: 1rem;
-    }
-    
-    .logo-img {
-        height: 35px; /* Un poco más pequeño para que quepa todo el menú */
-    }
-}
-
 .logo-img {
     height: 50px; 
     width: auto; 

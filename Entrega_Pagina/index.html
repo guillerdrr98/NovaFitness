@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Fitness | Tu Rutina Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><img src="./logo.png" alt="Nova Fitness" class="logo-img"></div>
+            <ul class="nav-links">
+                <li><a href="#imc-section" data-info="Nuestra calculadora utiliza la fórmula oficial de la OMS para determinar si tu peso es saludable respecto a tu altura. Introduce tu peso en Kg y tu altura en cm y obtén tu resultado">Calculadora</a></li>
+                <li><a href="#rutinas" data-info="Explora rutinas diseñadas por expertos. Haz clic en cada una para ver un ejemplo de plan detallado de ejercicios.">Rutinas</a></li>
+                <li><a href="#registro" data-info="Únete a nuestra comunidad. Al enviarnos tus datos, un asesor te contactará para una prueba gratuita.">Inscripción</a></li>
+            </ul>
+        </nav>
+
+        <div id="modal-descripcion" class="modal-info">
+            <div class="contenido-descripcion">
+                <span id="cerrar-descripcion">&times;</span>
+                <h3>Información</h3>
+                <p id="texto-descripcion"></p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="imc-section" class="container">
+            <h2>Calculadora de Salud (IMC)</h2>
+            <p>Introduce tus datos para conocer tu estado físico actual.</p>
+            <div class="form-group">
+                <input type="number" id="peso" min="0" placeholder="Peso en kg (ej: 75)">
+                <input type="number" id="altura" min="0" placeholder="Altura en cm (ej: 180)">
+                <button id="btn-calcular">Calcular IMC</button>
+            </div>
+            <div id="resultado-contenedor">
+                <p id="resultado-imc">El resultado aparecerá aquí.</p>
+            </div>
+        </section>
+
+        <section id="rutinas" class="container">
+            <h2>Nuestras Rutinas</h2>
+            <p>Haz clic en una imagen para ver los detalles del entrenamiento.</p>
+            <div class="galeria">
+                <img src="./ejercicio1.jpg" data-plan="./rutina1.jpg" alt="Rutina de Fuerza" class="img-rutina">
+                <img src="./ejercicio2.jpg" data-plan="./rutina2.jpg" alt="Rutina de Cardio" class="img-rutina">
+                <img src="./ejercicio3.jpg" data-plan="./rutina3.jpg" alt="Rutina de Yoga" class="img-rutina">
+            </div>
+        </section>
+
+        <section id="registro" class="container">
+            <h2>Inscripción al Gimnasio</h2>
+            <form id="gym-form">
+                <input type="text" id="nombre" placeholder="Nombre completo" required>
+                <input type="email" id="email" placeholder="Correo electrónico" required>
+                <select id="plan">
+                    <option value="basico">Plan Básico</option>
+                    <option value="premium">Plan Premium</option>
+                </select>
+                <button type="submit">Enviar Registro</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="visor-modal">
+        <span id="cerrar-modal">&times;</span>
+        <img id="img-modal-contenido">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

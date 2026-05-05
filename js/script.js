@@ -59,10 +59,20 @@ modal.addEventListener('click', (e) => {
 
 // --- FORMULARIO ---
 document.getElementById('gym-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita que la página se recargue
+    event.preventDefault(); // Evita que se recargue la página
+
     const nombre = document.getElementById('nombre').value;
+    const email = document.getElementById('email').value;
+
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (!emailPattern.test(email)) {
+        alert("Por favor, introduce un correo electrónico válido (ej: nombre@dominio.com)");
+        return;
+    }
+
     alert(`¡Hola ${nombre}! Tu solicitud ha sido enviada correctamente.`);
-    this.reset(); // Limpia el formulario
+    this.reset(); 
 });
 
 // --- DESCRIPCIONES DEL MENÚ ---

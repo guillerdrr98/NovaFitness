@@ -75,7 +75,23 @@ document.getElementById('gym-form').addEventListener('submit', function(event) {
     this.reset(); 
 });
 
-// --- DESCRIPCIONES DEL MENÚ ---
+// --- BOTÓN MENÚ ---
+const btnMenu = document.getElementById('btn-menu');
+const menuItems = document.getElementById('menu-items');
+
+btnMenu.addEventListener('click', () => {
+    // Alterna la clase 'mostrar' para ocultar/visualizar
+    menuItems.classList.toggle('mostrar');
+    
+    // Cambia el texto del botón según el estado
+    if(menuItems.classList.contains('mostrar')) {
+        btnMenu.innerText = "Cerrar";
+    } else {
+        btnMenu.innerText = "Menú";
+    }
+});
+
+// --- 2. MENÚ DESCRIPCIONES ---
 const enlacesMenu = document.querySelectorAll('.nav-links a');
 const modalDesc = document.getElementById('modal-descripcion');
 const textoDesc = document.getElementById('texto-descripcion');
@@ -83,23 +99,19 @@ const btnCerrarDesc = document.getElementById('cerrar-descripcion');
 
 enlacesMenu.forEach(enlace => {
     enlace.addEventListener('click', function(event) {
-        // Se evita que salte directamente a la sección para poder leer la info
         event.preventDefault(); 
         
         const info = this.getAttribute('data-info');
-        const destino = this.getAttribute('href'); // Se guarda a dónde quería ir el usuario
-
         textoDesc.innerText = info;
         modalDesc.style.display = 'flex';
     });
 });
 
-// Cerrar la descripción
+// Cerrar modal
 btnCerrarDesc.addEventListener('click', () => {
     modalDesc.style.display = 'none';
 });
 
-// También cerrar si se hace clic fuera del cuadro blanco
 window.addEventListener('click', (e) => {
     if (e.target === modalDesc) {
         modalDesc.style.display = 'none';

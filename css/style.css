@@ -12,6 +12,28 @@ body {
     color: #333;
 }
 
+/* Ocultamos los links por defecto */
+#menu-items {
+    display: none; 
+    list-style: none;
+    gap: 15px;
+}
+
+/* Cuando se active, los mostramos como fila (flex) */
+#menu-items.mostrar {
+    display: flex;
+}
+
+/* Ajustes del botón para que parezca un botón real */
+#btn-menu {
+    padding: 10px 20px;
+    background: #e67e22;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
 /* --- Navegación --- */
 .navbar {
     background: black;
@@ -22,6 +44,7 @@ body {
     padding: 1rem 2rem;
     top: 0;
     z-index: 100;
+	gap: 20px;
 }
 
 .nav-links {

@@ -3,7 +3,7 @@
  * Descripción: Manejo de IMC, Galería y Formulario.
  */
 
-// --- 1. LÓGICA CALCULADORA IMC ---
+// --- CALCULADORA IMC ---
 const btnCalcular = document.getElementById('btn-calcular');
 
 btnCalcular.addEventListener('click', function() {
@@ -37,7 +37,7 @@ btnCalcular.addEventListener('click', function() {
     }
 });
 
-// --- 2. LÓGICA GALERÍA (MOSTRAR PLAN DE EJERCICIOS) ---
+// --- GALERÍA DE PLANES DE EJERCICIOS ---
 const imagenes = document.querySelectorAll('.img-rutina');
 const modal = document.getElementById('visor-modal');
 const imgModal = document.getElementById('img-modal-contenido');
@@ -46,8 +46,6 @@ const btnCerrar = document.getElementById('cerrar-modal');
 imagenes.forEach(imagen => {
     imagen.addEventListener('click', function() {
         modal.style.display = 'flex';
-        
-        // CAMBIO CLAVE: En lugar de usar this.src, usamos el atributo data-plan
         const rutaPlan = this.getAttribute('data-plan'); 
         imgModal.src = rutaPlan; 
     });
@@ -59,7 +57,7 @@ modal.addEventListener('click', (e) => {
     if(e.target === modal) modal.style.display = 'none';
 });
 
-// --- 3. LÓGICA FORMULARIO ---
+// --- FORMULARIO ---
 document.getElementById('gym-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita que la página se recargue
     const nombre = document.getElementById('nombre').value;
@@ -67,7 +65,7 @@ document.getElementById('gym-form').addEventListener('submit', function(event) {
     this.reset(); // Limpia el formulario
 });
 
-// --- 4. LÓGICA DESCRIPCIONES DEL MENÚ ---
+// --- DESCRIPCIONES DEL MENÚ ---
 const enlacesMenu = document.querySelectorAll('.nav-links a');
 const modalDesc = document.getElementById('modal-descripcion');
 const textoDesc = document.getElementById('texto-descripcion');
@@ -75,17 +73,14 @@ const btnCerrarDesc = document.getElementById('cerrar-descripcion');
 
 enlacesMenu.forEach(enlace => {
     enlace.addEventListener('click', function(event) {
-        // Evitamos que salte directamente a la sección para poder leer la info
+        // Se evita que salte directamente a la sección para poder leer la info
         event.preventDefault(); 
         
         const info = this.getAttribute('data-info');
-        const destino = this.getAttribute('href'); // Guardamos a dónde quería ir el usuario
+        const destino = this.getAttribute('href'); // Se guarda a dónde quería ir el usuario
 
         textoDesc.innerText = info;
         modalDesc.style.display = 'flex';
-
-        // Opcional: Cerrar automáticamente y saltar a la sección tras 3 segundos
-        // O dejar que el usuario lo cierre manualmente.
     });
 });
 

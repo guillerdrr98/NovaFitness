@@ -91,7 +91,7 @@ btnMenu.addEventListener('click', () => {
     }
 });
 
-// --- 2. MENÚ DESCRIPCIONES ---
+// --- MENÚ DESCRIPCIONES ---
 const enlacesMenu = document.querySelectorAll('.nav-links a');
 const modalDesc = document.getElementById('modal-descripcion');
 const textoDesc = document.getElementById('texto-descripcion');
@@ -99,7 +99,7 @@ const btnCerrarDesc = document.getElementById('cerrar-descripcion');
 
 enlacesMenu.forEach(enlace => {
     enlace.addEventListener('click', function(event) {
-        event.preventDefault(); 
+        event.preventDefault(); // Evitamos que al pulsar el botón se vaya a una página que no existe
         
         const info = this.getAttribute('data-info');
         textoDesc.innerText = info;

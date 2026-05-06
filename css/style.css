@@ -12,7 +12,7 @@ body {
     color: #333;
 }
 
-/* Ocultamos los links por defecto */
+/* --- Botón Menú --- */
 #menu-items {
     display: none; 
     list-style: none;
@@ -24,7 +24,6 @@ body {
     display: flex;
 }
 
-/* Ajustes del botón para que parezca un botón real */
 #btn-menu {
     padding: 10px 20px;
     background: #e67e22;
@@ -160,13 +159,13 @@ body {
 }
 
 .pie-pagina {
-    background-color: #000; /* Fondo negro */
-    color: #fff;            /* Texto blanco */
-    text-align: center;     /* Centrado */
+    background-color: #000;
+    color: #fff;
+    text-align: center;
 	font-size: 14px;
-    padding: 20px;          /* Espacio interior para que no quede pegado */
-    margin-top: 40px;       /* Un poco de aire con el contenido anterior */
-    width: 100%;            /* Asegura que ocupe todo el ancho */
+    padding: 20px;
+    margin-top: 40px;
+    width: 100%;
 }
 
 /* --- RESPONSIVE --- */

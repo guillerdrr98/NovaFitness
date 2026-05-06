@@ -35,8 +35,8 @@ body {
 
 /* --- Navegación --- */
 .navbar {
-    background: black;
-    color: white;
+    background: #fff;
+    color: #000;
     display: flex;
     justify-content: space-between;
     align-items: center;

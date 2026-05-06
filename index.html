@@ -8,6 +8,7 @@
 </head>
 <body>
     <header>
+		<!-- Barra superior de la página. En ella se mostrará el logo del gimnasio, el botón menú y los botones con las distintas descripciones cuando se pulse el botón menú -->
         <nav class="navbar">
             <div class="logo"><img src="img/logo.png" alt="Nova Fitness" class="logo-img"></div>
 			<button id="btn-menu">Menú</button>
@@ -19,6 +20,7 @@
             </ul>
         </nav>
 
+		<!-- Contenedor que se invocará al pulsar uno de los botones de la parte duperior de la página. Este contendrá una descripción correspondiente al botón pulsado -->
         <div id="modal-descripcion" class="modal-info">
             <div class="contenido-descripcion">
                 <span id="cerrar-descripcion">&times;</span>
@@ -28,6 +30,7 @@
         </div>
     </header>
 
+	<!-- Sección de la página en la que se encontrará la calculadora de IMC -->
     <main>
         <section id="imc-section" class="container">
             <h2>Calculadora de Salud (IMC)</h2>
@@ -42,16 +45,18 @@
             </div>
         </section>
 
+		<!-- Sección de la página en la que se encontrarán 3 botones que mostrarán 3 rutinas para distintos músculos -->
         <section id="rutinas" class="container">
             <h2>Nuestras Rutinas</h2>
             <p>Haz clic en una imagen para ver los detalles del entrenamiento.</p>
             <div class="galeria">
-                <img src="img/ejercicio1.png" title= "Rutina de pecho" data-plan="img/rutina1.jpg" alt="Rutina de pecho" class="img-rutina">
+                <img src="img/ejercicio1.png" title= "Rutina de pecho" data-plan="img/rutina1.jpg" alt="Rutina de pecho" class="img-rutina"> <!-- Se crea un parámetro llamado "data-plan" al que recurrirá el js para mostrar la rutina correcta -->
                 <img src="img/ejercicio2.png" title= "Rutina de espalda" data-plan="img/rutina2.jpg" alt="Rutina de espalda" class="img-rutina">
                 <img src="img/ejercicio3.png" title= "Rutina de cuadriceps" data-plan="img/rutina3.jpg" alt="Rutina de cuadriceps" class="img-rutina">
             </div>
         </section>
 
+		<!-- Sección de la página en la que se encontrará el formulario de inscripción al gimnasio -->
         <section id="registro" class="container">
             <h2>Inscripción al Gimnasio</h2>
             <form id="gym-form">
@@ -66,6 +71,7 @@
         </section>
     </main>
 
+	<!-- Contenedor que se usará para hacer visible la rutina correspondiente cuando se pulsen los botones de la sección de rutinas -->
     <div id="visor-modal">
         <span id="cerrar-modal">&times;</span>
         <img id="img-modal-contenido" alt="Imagen de la rutina">

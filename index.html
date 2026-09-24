@@ -1,85 +1,195 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Nova Fitness | Tu Rutina Digital</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header>
-		<!-- Barra superior de la página. En ella se mostrará el logo del gimnasio, el botón menú y los botones con las distintas descripciones cuando se pulse el botón menú -->
-        <nav class="navbar">
-            <div class="logo"><img src="img/logo.png" alt="Nova Fitness" class="logo-img"></div>
-			<button id="btn-menu">Menú</button>
-            <ul class="nav-links" id="menu-items">
-                <li><a href="#imc-section" data-info="Nuestra calculadora utiliza la fórmula oficial de la OMS para determinar si tu peso es saludable respecto a tu altura. Introduce tu peso en Kg y tu altura en cm y obtén tu resultado">Calculadora</a></li>
-                <li><a href="#rutinas" data-info="Explora rutinas diseñadas por expertos. Haz click en una de las imágenes para ver un plan detallado centrado en el músculo de la imagen.">Rutinas</a></li>
-                <li><a href="#registro" data-info="Únete a nuestra comunidad. Al enviarnos tus datos, un asesor te contactará para una prueba gratuita.">Inscripción</a></li>
-				<li><a href="#info" data-info="Nova Fitness es un proyecto inventado. En esta página podrás probar una calculadora de IMC, visualizar unas rutinas de prueba y rellenar un formulario de inscripción.">Sobre nosotros</a></li>
-            </ul>
-        </nav>
+<?xml version="1.0" encoding="UTF-8"?>
 
-		<!-- Contenedor que se invocará al pulsar uno de los botones de la parte duperior de la página. Este contendrá una descripción correspondiente al botón pulsado -->
-        <div id="modal-descripcion" class="modal-info">
-            <div class="contenido-descripcion">
-                <span id="cerrar-descripcion">&times;</span>
-                <h3>Información</h3>
-                <p id="texto-descripcion"></p>
-            </div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Nova Fitness | Tu Rutina Digital</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- Barra superior de la página. En ella se mostrará el logo del gimnasio, el botón menú y los botones con las distintas descripciones cuando se pulse el botón menú -->
+
+      <nav class="navbar">
+        <div class="logo">
+          <img src="img/logo.png" alt="Nova Fitness" class="logo-img" />
         </div>
+
+        <button id="btn-menu">Menú</button>
+
+        <ul class="nav-links" id="menu-items">
+          <li>
+            <a
+              href="#imc-section"
+              data-info="Nuestra calculadora utiliza la fórmula oficial de la OMS para determinar si tu peso es saludable respecto a tu altura. Introduce tu peso en Kg y tu altura en cm y obtén tu resultado"
+              >Calculadora</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#rutinas"
+              data-info="Explora rutinas diseñadas por expertos. Haz click en una de las imágenes para ver un plan detallado centrado en el músculo de la imagen."
+              >Rutinas</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#registro"
+              data-info="Únete a nuestra comunidad. Al enviarnos tus datos, un asesor te contactará para una prueba gratuita."
+              >Inscripción</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#info"
+              data-info="Nova Fitness es un proyecto inventado. En esta página podrás probar una calculadora de IMC, visualizar unas rutinas de prueba y rellenar un formulario de inscripción."
+              >Sobre nosotros</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Contenedor que se invocará al pulsar uno de los botones de la parte duperior de la página. Este contendrá una descripción correspondiente al botón pulsado -->
+
+      <div id="modal-descripcion" class="modal-info">
+        <div class="contenido-descripcion">
+          <span id="cerrar-descripcion">&times;</span>
+
+          <h3>Información</h3>
+
+          <p id="texto-descripcion"></p>
+        </div>
+      </div>
     </header>
 
-	<!-- Sección de la página en la que se encontrará la calculadora de IMC -->
+    <!-- Sección de la página en la que se encontrará la calculadora de IMC -->
+
     <main>
-        <section id="imc-section" class="container">
-            <h2>Calculadora de Salud (IMC)</h2>
-            <p>Introduce tus datos para conocer tu estado físico actual.</p>
-            <div class="form-group">
-                <input type="number" id="peso" min="0" placeholder="Peso en kg (ej: 75)">
-                <input type="number" id="altura" min="0" placeholder="Altura en cm (ej: 180)">
-                <button id="btn-calcular">Calcular IMC</button>
-            </div>
-            <div id="resultado-contenedor">
-                <p id="resultado-imc">El resultado aparecerá aquí.</p>
-            </div>
-        </section>
+      <section id="imc-section" class="container">
+        <h1>Calculadora de Salud (IMC)</h1>
 
-		<!-- Sección de la página en la que se encontrarán 3 botones que mostrarán 3 rutinas para distintos músculos -->
-        <section id="rutinas" class="container">
-            <h2>Nuestras Rutinas</h2>
-            <p>Haz clic en una imagen para ver los detalles del entrenamiento.</p>
-            <div class="galeria">
-                <img src="img/ejercicio1.png" title= "Rutina de pecho" data-plan="img/rutina1.jpg" alt="Rutina de pecho" class="img-rutina"> <!-- Se crea un parámetro llamado "data-plan" al que recurrirá el js para mostrar la rutina correcta -->
-                <img src="img/ejercicio2.png" title= "Rutina de espalda" data-plan="img/rutina2.jpg" alt="Rutina de espalda" class="img-rutina">
-                <img src="img/ejercicio3.png" title= "Rutina de cuadriceps" data-plan="img/rutina3.jpg" alt="Rutina de cuadriceps" class="img-rutina">
-            </div>
-        </section>
+        <p>Introduce tus datos para conocer tu estado físico actual.</p>
 
-		<!-- Sección de la página en la que se encontrará el formulario de inscripción al gimnasio -->
-        <section id="registro" class="container">
-            <h2>Inscripción al Gimnasio</h2>
-            <form id="gym-form">
-                <input type="text" id="nombre" placeholder="Nombre completo" required>
-                <input type="email"	id="email" placeholder="correo@ejemplo.com" required>
-                <select id="plan">
-                    <option value="basico">Plan Básico</option>
-                    <option value="premium">Plan Premium</option>
-                </select>
-                <button type="submit">Enviar Registro</button>
-            </form>
-        </section>
+        <div class="form-group">
+          <label for="peso">Peso</label>
+          <input
+            type="number"
+            id="peso"
+            min="0"
+            placeholder="Peso en kg (ej: 75)"
+          />
+
+          <label for="altura">Altura</label>
+          <input
+            type="number"
+            id="altura"
+            min="0"
+            placeholder="Altura en cm (ej: 180)"
+          />
+
+          <button id="btn-calcular">Calcular IMC</button>
+        </div>
+
+        <div id="resultado-contenedor">
+          <p id="resultado-imc">El resultado aparecerá aquí.</p>
+        </div>
+      </section>
+
+      <!-- Sección de la página en la que se encontrarán 3 botones que mostrarán 3 rutinas para distintos músculos -->
+
+      <section id="rutinas" class="container">
+        <h1>Nuestras Rutinas</h1>
+
+        <p>Haz clic en una imagen para ver los detalles del entrenamiento.</p>
+
+        <div class="galeria">
+          <img
+            src="img/ejercicio1.png"
+            title="Rutina de pecho"
+            data-plan="img/rutina1.jpg"
+            alt="Rutina de pecho"
+            class="img-rutina"
+          />
+
+          <!-- Se crea un parámetro llamado "data-plan" al que recurrirá el js para mostrar la rutina correcta -->
+
+          <img
+            src="img/ejercicio2.png"
+            title="Rutina de espalda"
+            data-plan="img/rutina2.jpg"
+            alt="Rutina de espalda"
+            class="img-rutina"
+          />
+
+          <img
+            src="img/ejercicio3.png"
+            title="Rutina de cuadriceps"
+            data-plan="img/rutina3.jpg"
+            alt="Rutina de cuadriceps"
+            class="img-rutina"
+          />
+        </div>
+      </section>
+
+      <!-- Sección de la página en la que se encontrará el formulario de inscripción al gimnasio -->
+
+      <section id="registro" class="container">
+        <h1>Inscripción al Gimnasio</h1>
+
+        <form id="gym-form">
+          <div class="campo-formulario">
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              id="nombre"
+              placeholder="Nombre completo"
+              required
+            />
+          </div>
+
+          <div class="campo-formulario">
+            <label for="email">Correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="correo@ejemplo.com"
+              required
+            />
+          </div>
+
+          <div class="campo-formulario">
+            <label for="plan">Plan</label>
+            <select id="plan">
+              <option value="basico">Plan Básico</option>
+              <option value="premium">Plan Premium</option>
+            </select>
+          </div>
+
+          <button type="submit">Enviar Registro</button>
+        </form>
+      </section>
     </main>
 
-	<!-- Contenedor que se usará para hacer visible la rutina correspondiente cuando se pulsen los botones de la sección de rutinas -->
-    <div id="visor-modal">
-        <span id="cerrar-modal">&times;</span>
-        <img id="img-modal-contenido" alt="Imagen de la rutina">
-    </div>
-    <script src="js/script.js"></script>
-	<footer class="pie-pagina">
-        <p>NovaFitness© 2026 - Guillermo de la Roza Rodríguez - CIFP Avilés</p>
-    </footer>
-</body>
-</html>
+    <!-- Contenedor que se usará para hacer visible la rutina correspondiente cuando se pulsen los botones de la sección de rutinas -->
 
+    <div id="visor-modal">
+      <span id="cerrar-modal">&times;</span>
+
+      <img id="img-modal-contenido" alt="Imagen de la rutina" />
+    </div>
+
+    <script src="js/script.js"></script>
+
+    <footer class="pie-pagina">
+      <p>NovaFitness© 2026 - Guillermo de la Roza Rodríguez - CIFP Avilés</p>
+    </footer>
+  </body>
+</html>

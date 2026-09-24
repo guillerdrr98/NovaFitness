@@ -26,8 +26,8 @@ body {
 
 #btn-menu {
     padding: 10px 20px;
-    background: #e67e22;
-    color: white;
+    background: #ff6500;
+    color: black;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -36,7 +36,7 @@ body {
 /* --- Navegación --- */
 .navbar {
     background: #000;
-    color: #fff;
+    color: #efeeea;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,7 +52,7 @@ body {
 }
 
 .nav-links li a {
-    color: white;
+    color: #efeeea;
     text-decoration: none;
     margin-left: 20px;
 }
@@ -62,7 +62,7 @@ body {
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
-    background: white;
+    background: #efeeea;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
@@ -104,13 +104,13 @@ body {
 #img-modal-contenido {
     max-width: 90%;
     max-height: 80%;
-    border: 3px solid white;
+    border: 3px solid #efeeea;
 }
 
 #cerrar-modal {
     position: absolute;
     top: 20px; right: 30px;
-    color: white;
+    color: #efeeea;
     font-size: 40px;
     cursor: pointer;
 }
@@ -128,7 +128,7 @@ body {
 }
 
 .contenido-descripcion {
-    background: white;
+    background: #efeeea;
     padding: 30px;
     border-radius: 15px;
     width: 350px;
@@ -160,7 +160,7 @@ body {
 
 .pie-pagina {
     background-color: #000;
-    color: #fff;
+    color: #efeeea;
     text-align: center;
 	font-size: 14px;
     padding: 20px;
